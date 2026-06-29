@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Aggregator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>📰 AI News Aggregator & Sentiment Analyzer</h1>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search news..."
+        >
+        <div class="filters">
+            <button onclick="filterCategory('All')">All</button>
+            <button onclick="filterCategory('Technology')">Technology</button>
+            <button onclick="filterCategory('Finance')">Finance</button>
+            <button onclick="filterCategory('Sports')">Sports</button>
+            <button onclick="filterCategory('General')">General</button>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="newsContainer"></section>
+
+        <section class="dashboard">
+
+            <h2>Dashboard</h2>
+
+            <div class="stats">
+                <div class="box">
+                    <h3 id="totalNews">0</h3>
+                    <p>Total News</p>
+                </div>
+
+                <div class="box positive">
+                    <h3 id="positiveCount">0</h3>
+                    <p>Positive 😊</p>
+                </div>
+
+                <div class="box neutral">
+                    <h3 id="neutralCount">0</h3>
+                    <p>Neutral 😐</p>
+                </div>
+
+                <div class="box negative">
+                    <h3 id="negativeCount">0</h3>
+                    <p>Negative 😞</p>
+                </div>
+            </div>
+            <h2>Sentiment Analysis Chart</h2>
+
+            <div class="chart-container">
+            <canvas id="sentimentChart"></canvas>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

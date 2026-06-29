@@ -1,0 +1,142 @@
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+}
+
+header{
+    background:#1565c0;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+header input{
+    margin-top:15px;
+    width:60%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
+
+#newsContainer{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+
+.card h2{
+    margin-top:0;
+}
+
+.badge{
+    display:inline-block;
+    padding:5px 10px;
+    border-radius:20px;
+    color:white;
+    font-size:14px;
+    margin-right:5px;
+}
+
+.tech{
+    background:#1976d2;
+}
+
+.finance{
+    background:#ef6c00;
+}
+
+.sports{
+    background:#2e7d32;
+}
+
+.positive{
+    background:#43a047;
+}
+
+.neutral{
+    background:#757575;
+}
+
+.negative{
+    background:#e53935;
+}
+
+.dashboard{
+    padding:20px;
+}
+
+.stats{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.box{
+    flex:1;
+    min-width:150px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card button {
+    background: #1565c0;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: #0d47a1;
+}
+.filters {
+    margin-top: 15px;
+}
+
+.filters button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: white;
+    color: #1565c0;
+    font-weight: bold;
+}
+
+.filters button:hover {
+    background: #e3f2fd;
+}
+
+#sentimentChart {
+    width: 400px !important;
+    height: 400px !important;
+    margin: 20px auto;
+    display: block;
+}
+
+.chart-container {
+    width: 450px;
+    height: 450px;
+    margin: 20px auto;
+}
