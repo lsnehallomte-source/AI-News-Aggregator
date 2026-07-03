@@ -10,20 +10,32 @@
 <body>
 
     <header>
-        <h1>📰 AI News Aggregator & Sentiment Analyzer</h1>
+    <h1>📰 AI News Aggregator & Sentiment Analyzer</h1>
 
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Search news..."
-        >
-        <div class="filters">
-            <button onclick="filterCategory('All')">All</button>
-            <button onclick="filterCategory('Technology')">Technology</button>
-            <button onclick="filterCategory('Finance')">Finance</button>
-            <button onclick="filterCategory('Sports')">Sports</button>
-            <button onclick="filterCategory('General')">General</button>
-        </div>
+    <!-- Login/Register -->
+    <!-- Login/Register -->
+    <div style="margin-top: 10px;">
+          {% if current_user.is_authenticated %}
+             Welcome, {{ current_user.name }} |
+        <a href="/bookmarks">My Bookmarks</a> |
+        <a href="/logout">Logout</a>
+             {% else %}
+        <a href="/login">Login</a> |
+        <a href="/register">Create Account</a>
+             {% endif %}
+    </div>
+
+    <!-- Search bar -->
+    <input type="text" id="searchInput" placeholder="Search news...">
+
+    <!-- Filters (IMPORTANT - DO NOT REMOVE) -->
+    <div class="filters">
+        <button onclick="filterCategory('All')">All</button>
+        <button onclick="filterCategory('Technology')">Technology</button>
+        <button onclick="filterCategory('Finance')">Finance</button>
+        <button onclick="filterCategory('Sports')">Sports</button>
+        <button onclick="filterCategory('General')">General</button>
+    </div>
     </header>
 
     <main>

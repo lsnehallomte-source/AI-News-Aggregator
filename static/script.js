@@ -1,7 +1,7 @@
 let news = [];
 let sentimentChart = null;
 
-fetch("http://127.0.0.1:5000/api/news")
+fetch("/api/news")
   .then(response => response.json())
   .then(data => {
     news = data;
@@ -61,7 +61,7 @@ ${item.sentiment}
     <button>Read More</button>
 </a>
 
-<button onclick="bookmarkNews('${item.title}')">
+<button onclick='bookmarkNews(${JSON.stringify(item)})'>
     ⭐ Bookmark
 </button>
 
@@ -128,7 +128,7 @@ function filterCategory(category) {
 
     showNews(filtered);
 }
-function bookmarkNews(title) {
+function bookmarkNews(item) {
 
     fetch("/bookmark", {
         method: "POST",
@@ -136,7 +136,12 @@ function bookmarkNews(title) {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            title: title
+            title: item.title,
+            image: item.image,
+            url: item.url,
+            source: item.source,
+            category: item.category,
+            sentiment: item.sentiment
         })
     })
 

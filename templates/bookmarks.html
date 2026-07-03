@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Bookmarks</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>📑 My Saved Bookmarks</h1>
+
+{% for bookmark in bookmarks %}
+
+<div class="card">
+
+    <img src="{{ bookmark.image }}" alt="News Image">
+
+    <h2>{{ bookmark.title }}</h2>
+
+    <p><strong>Source:</strong> {{ bookmark.source }}</p>
+
+    <p><strong>Category:</strong> {{ bookmark.category }}</p>
+
+    <p><strong>Sentiment:</strong> {{ bookmark.sentiment }}</p>
+
+    <a href="{{ bookmark.url }}" target="_blank">
+        <button>Read More</button>
+    </a>
+
+</div>
+
+{% endfor %}
+
+<br>
+
+<a href="/">⬅ Back to Home</a>
+
+</body>
+</html>
