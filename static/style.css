@@ -1,49 +1,86 @@
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
     font-family:Arial,sans-serif;
-    background:#f4f4f4;
+}
+
+body{
+    background:#f4f7fc;
 }
 
 header{
     background:#1565c0;
     color:white;
-    padding:20px;
+    padding:20px 20px 35px 20px;
     text-align:center;
 }
 
-header input{
-    margin-top:15px;
+header h1{
+    margin-bottom:15px;
+}
+
+#searchInput{
     width:60%;
-    padding:10px;
+    padding:12px;
     border:none;
-    border-radius:5px;
+    border-radius:6px;
+    font-size:16px;
+    margin-top:15px;
+    margin-bottom:20px;
+}
+
+main{
+    width:90%;
+    margin:30px auto;
 }
 
 #newsContainer{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:20px;
-    padding:20px;
 }
 
 .card{
     background:white;
     padding:20px;
     border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .card h2{
-    margin-top:0;
+    color:#1565c0;
+    margin-bottom:10px;
+    font-size:22px;
+}
+
+.card p{
+    margin:15px 0;
+    color:#555;
+    line-height:1.5;
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:8px;
+    margin-bottom:15px;
 }
 
 .badge{
     display:inline-block;
-    padding:5px 10px;
+    padding:6px 12px;
     border-radius:20px;
     color:white;
-    font-size:14px;
-    margin-right:5px;
+    font-size:13px;
+    margin-right:8px;
+    margin-bottom:10px;
 }
 
 .tech{
@@ -51,11 +88,11 @@ header input{
 }
 
 .finance{
-    background:#ef6c00;
+    background:#2e7d32;
 }
 
 .sports{
-    background:#2e7d32;
+    background:#ef6c00;
 }
 
 .positive{
@@ -70,73 +107,61 @@ header input{
     background:#e53935;
 }
 
+button{
+    background:#1565c0;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:5px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#0d47a1;
+}
+
 .dashboard{
-    padding:20px;
+    margin-top:40px;
+}
+
+.dashboard h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#1565c0;
 }
 
 .stats{
-    display:flex;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
     gap:20px;
 }
 
 .box{
-    flex:1;
-    min-width:150px;
     background:white;
+    text-align:center;
     padding:20px;
     border-radius:10px;
-    text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,0.2);
-}
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
 }
 
-.card button {
-    background: #1565c0;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
+.box h3{
+    font-size:32px;
+    margin-bottom:10px;
 }
 
-.card button:hover {
-    background: #0d47a1;
-}
-.filters {
-    margin-top: 15px;
+.box p{
+    font-size:18px;
 }
 
-.filters button {
-    margin: 5px;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background: white;
-    color: #1565c0;
-    font-weight: bold;
-}
+@media(max-width:768px){
 
-.filters button:hover {
-    background: #e3f2fd;
-}
+    #searchInput{
+        width:90%;
+    }
 
-#sentimentChart {
-    width: 400px !important;
-    height: 400px !important;
-    margin: 20px auto;
-    display: block;
-}
+    header h1{
+        font-size:24px;
+    }
 
-.chart-container {
-    width: 450px;
-    height: 450px;
-    margin: 20px auto;
 }

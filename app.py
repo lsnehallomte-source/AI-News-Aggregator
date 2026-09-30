@@ -97,12 +97,22 @@ def login():
 
     return render_template('login.html')
 
-@app.route("/api/news")
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("home"))
 
+@app.route("/api/news")
 def get_news():
-    url = f"https://newsapi.org/v2/top-headlines?country=us&apiKey={API_KEY}"
+
+    url = f"https://newsapi.org/v2/top-headlines?country=us&pageSize=100&apiKey={API_KEY}"
 
     response = requests.get(url)
+
+    print(response.status_code)
+    print(response.json())
+    
     if response.status_code != 200:
        return jsonify({"error": "Failed to fetch news"})
     data = response.json()
